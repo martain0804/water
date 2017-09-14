@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<link rel="stylesheet" href="css/animate.css">
+	<title>Document</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		html,body{width: 100%;height: 100%;}
+		.wrap{height: 100%;background:url(img/main/bg.jpg) no-repeat;background-size: 100% 100%;max-width: 800px;max-height: 1269;margin: auto;position: relative;}
+		img{position: absolute;}
+		.wrap>img:nth-of-type(1){width: 50%;left: 25%;}
+		.wrap>img:nth-of-type(2){width: 100%;top:8%;animation:tit 0.5s ease-out 2.5s both;}
+		.wrap>img:nth-of-type(3){width: 50%;left:30%;top:16%;animation-delay:3s;}
+		.wrap>img:nth-of-type(4){width: 30%;left:5%;top:15%;animation-delay:2.7s;}
+		/*下面是人物*/
+		.wrap>img:nth-of-type(5){width: 30%;left:2%;top:45%;animation:peo 1s ease-out 1.5s both;}
+		.wrap>img:nth-of-type(6){width: 30%;left:18%;top:47%;animation:peo 1s ease-out 1s both;}
+		.wrap>img:nth-of-type(7){width: 25%;left:35%;top:50%;animation:peo 1s ease-out 0.5s both;}
+		.wrap>img:nth-of-type(8){width: 20%;left:57%;top:46%;animation:peo 1s ease-out 1s both;}
+		.wrap>img:nth-of-type(9){width: 25%;left:72%;top:46%;animation:peo 1s ease-out 1.5s both;}
+		/**/
+		.wrap>img:nth-of-type(10){width: 30%;left:35%;top:80%;}
+		.wrap>img:nth-of-type(11){width: 20%;left:40%;top:87%;}
+		.text{position: absolute;width: 100%;height: 100%;z-index: 22;background: url(img/main/rulesText.png) no-repeat;background-size: 100% 100%;display: none;}
+		.cha{width: 13%;height: 7%;margin:20% 0 0 81%;}
+		#load{width: 100%;height: 100%;position: absolute;z-index: 100;background:url(img/loading.jpg) no-repeat;background-size: 100% 100%;}
+		#load>img{width: 60%;margin-left:20%;margin-top:20%;}
+		#load>span{width: 10%;margin-left:45%;margin-top:40%;display: block;font-size: 20px;color:#6bc1f0;}
+		@keyframes peo{
+			from{transform:translateY(-300%);}
+			to{transform:translateY(0);}
+		}
+		@keyframes tit{
+			from{opacity: 0;}
+			to{opacity: 1;}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<img src="img/main/index_logo.png" alt="" class="animated slideInDown">
+		<img src="img/main/in_bg01.png" alt="" class="animated ">
+		<img src="img/main/dialogue.png" alt="" class="animated bounceIn">
+		<img src="img/main/in_01.png" alt="" class="animated rotateIn">
+		<img src="img/main/people_01.png" alt="" class="animated">
+		<img src="img/main/people_02.png" alt="" class="animated">
+		<img src="img/main/people_03.png" alt="" class="animated">
+		<img src="img/main/people_04.png" alt="" class="animated">
+		<img src="img/main/people_05.png" alt="" class="animated">
+		<img src="img/main/start.png" alt="" class="animated bounceIn">
+		<img src="img/main/rules.png" alt="" class="animated bounceIn">
+		<div class="text">
+			<div class="cha"></div>
+		</div>
+		<div id="load">
+			<img src="img/load_font.png" alt="">
+			<span id="pro"></span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var img=document.querySelectorAll("img");
+	var text=document.querySelector(".text");
+	var cha=document.querySelector(".cha");
+	var arr=["img/main/index_logo.png","img/main/in_bg01.png","img/main/dialogue.png","img/main/in_01.png","img/main/people_01.png","img/main/people_02.png","img/main/people_03.png","img/main/people_04.png","img/main/people_05.png","img/main/start.png","img/main/rules.png"];
+	var arr2=[];
+	function pre(array,fn){
+		var index=0;
+		for(var i=0;i<array.length;i++){
+			var img=new Image();
+			img.src=array[i];
+			img.onload=function(){			
+				arr2.push(this);
+				index++;
+				pro.innerText=parseInt(index/arr.length*100)+"%";
+				if(index==array.length){
+					fn();
+				}
+			}
+		}
+	}
+	pre(arr,function(){
+		load.style.display = 'none';
+	})
+	img[9].addEventListener("touchstart", function(){		
+		window.location.href='stars.html';
+	},false)
+	img[10].addEventListener("touchstart", function(){		
+		text.style.display="block";
+	},false)
+	cha.addEventListener("touchstart", function(){		
+		text.style.display="none";
+	},false)
+</script>
+</html>

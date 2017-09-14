@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<style>
+    html, body {position: relative;height: 100%;}
+    body {margin: 0;padding: 0;}
+    .wrap{height: 100%;background:url(img/main/bg.jpg) no-repeat;background-size: 100% 100%;max-width: 800px;max-height: 1269;margin: auto;position: relative;}
+    .wrap>span{width:90%;height: 15%;background: url(img/game/result.png) no-repeat;background-size: 100% 100%;display: block;position: absolute;left: 3%;top: 5%;font-size: 30px;text-align: center;line-height: 300%;font-weight:bold;color: #1084c8;z-index: 100;}
+    .wrap>div{width: 100%;height: 18%;position: absolute;top:20%;text-align: center;}
+    .wrap>div img{width: 25%;height: 95%;}
+    .wrap>img:nth-of-type(1){width:80%;position: absolute;left: 10%;top: 38%;}
+    .wrap>img:nth-of-type(2){width:80%;position: absolute;left: 10%;top: 44%;}
+    .wrap>img:nth-of-type(3){width:50%;position: absolute;left: 25%;top: 60%;}
+    .wrap>img:nth-of-type(4){width:36%;position: absolute;left: 32%;top: 83%;}
+    #music{width: 10%;left: 88%;top:95%;position: absolute;}
+    </style>
+</head>
+<body>
+	<div class="wrap">
+		<span></span>
+		<div id="fen">		
+		</div>
+		<img src="img/game/rt_11.png" alt="" name="text">
+		<img src="img/game/rt_12.png" alt="" name="text">
+		<img src="img/game/r_1.png" alt="" name="text">
+		<img src="img/game/choujiang.png" alt="" id="btn">
+		<audio src="bg_music.mp3"></audio>
+		<img src="img/game/music_01.png" alt="" id="music">
+	</div>
+</body>
+<script type="text/javascript">
+	var btn=document.querySelector("#btn");	
+	var music=document.querySelector("#music");	
+	var audio=document.querySelector("audio");
+	var ming=document.querySelector("span");
+	var score=document.querySelector("#fen");
+	var index=sessionStorage.getItem('cal');
+	var peo1=sessionStorage.getItem('index');
+	var peo=parseInt(peo1);
+	var mubol=true;
+	switch(peo){
+		case 0: peo="吕绍聪"; break;
+		case 1: peo="佟梦实"; break;
+		case 2: peo="邵明明"; break;
+		case 3: peo="袁雨萱"; break;
+		case 4: peo="宋妍霏"; break;
+		case 5: peo="邢菲"; break;
+		case 6: peo="左溢"; break;
+		case 7: peo="赵顺然"; break;
+		case 8: peo="史文翔"; break;
+		case 9: peo="葛侑吟"; break;
+		case 10: peo="程星源";break;
+		case 11: peo="高昱睿"; break;
+		case 12: peo="万国鹏"; break;
+		case 13: peo="张予曦"; break;
+		default:;break;
+	}
+	ming.innerText=peo+"的水润星值为";
+	var num=0;
+	for(var i=0;i<3;i++){
+		if(index>=Math.pow(10,i)){num++}
+	}
+	for(var i=0;i<num;i++){
+		var img=document.createElement("img");		
+		score.appendChild(img);
+	}
+	var mark=score.querySelectorAll("img");
+	if(num==3){
+		mark[0].src="img/game/"+parseInt(index/100)+".png";
+		mark[1].src="img/game/"+parseInt(index%100/10)+".png";
+		mark[2].src="img/game/"+parseInt(index%10)+".png";
+	}
+	if(num==2){
+		mark[0].src="img/game/"+parseInt(index%100/10)+".png";
+		mark[1].src="img/game/"+parseInt(index%10)+".png";
+	}
+	if(num==1){
+		mark[0].src="img/game/"+parseInt(index%10)+".png";
+	}
+	var text=document.getElementsByName("text");
+	if(index>100){text[2].style.width="16%";text[2].style.left="42%";text[2].style.top="55%";text[0].src="img/game/rt_31.png";text[1].src="img/game/rt_32.png";text[2].src="img/game/r_3.png";}
+	else if(index<50){}
+	else{text[2].style.width="16%";text[2].style.left="42%";text[2].style.top="55%";text[0].src="img/game/rt_21.png";text[1].src="img/game/rt_22.png";text[2].src="img/game/r_2.png";}
+	music.addEventListener("touchstart", function(){
+		if(mubol){
+			audio.pause();
+			this.src="img/game/music_02.png";
+		}else{
+			audio.play();
+			this.src="img/game/music_01.png";
+		}
+		mubol=!mubol;
+	}, false)
+	btn.addEventListener("touchstart", function(){
+		window.location.href="last.html";
+	}, false)
+</script>
+</html>

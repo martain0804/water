@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>Document</title>
+	<style type="text/css">
+	*{padding: 0;margin: 0;}
+	html,body{width: 100%;height: 100%;}
+	.wrap{height: 100%;background:url(img/main/bg.jpg) no-repeat;background-size: 100% 100%;max-width: 800px;max-height: 1269;margin: auto;position: relative;}
+	.wrap>img{position: absolute;}
+	.wrap>img:nth-of-type(1){width: 90%;left: 5%;top: 5%;}
+	.wrap>img:nth-of-type(2){width: 30%;left: 5%;top: 33%;}
+	.wrap>img:nth-of-type(3){width: 30%;left: 35%;top: 33%;}
+	.wrap>img:nth-of-type(4){width: 30%;left: 65%;top: 33%;}
+	.wrap>img:nth-of-type(5){width: 70%;left: 15%;top: 55%;}
+	input[type=text]{width: 36%;height: 7%;display: block;position: absolute;left:44%;top:55%;font-size:23px;border: none;outline: none;background-color: transparent;}
+	input[type=submit]{display: block;position: absolute;width: 30%;height: 6%;left:35%;top:67%;border: none;outline: none;background: url(img/game/tijiao.png) no-repeat;background-size: 100% 100%;}
+	.wrap>img:nth-of-type(6){width: 26%;left:37%;top:75%;}
+	.wrap>img:nth-of-type(7){width: 80%;left:10%;top:82%;}
+	.text{position: absolute;width: 100%;height: 100%;z-index: 22;background: url(img/game/fajiangxize.png) no-repeat;background-size: 100% 100%;display: none;}
+	.cha{width: 13%;height: 7%;margin:10% 0 0 81%;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<img src="img/game/text_01.png" alt="">
+		<img src="img/game/pro_01.png" alt="">
+		<img src="img/game/pro_02.png" alt="">
+		<img src="img/game/pro_03.png" alt="">
+		<img src="img/game/photo.png" alt="">
+		<form action="">
+			<input type="text" id="num">
+			<input type="submit" value="" id="sub">
+		</form>
+		<img src="img/game/xize.png" alt="" id="rule">
+		<img src="img/game/yujing.png" alt="">
+		<div class="text">
+			<div class="cha"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var num=document.querySelector("#num");
+	var rule=document.querySelector("#rule");
+	var sub=document.querySelector("#sub");
+	var text=document.querySelector(".text");
+	var cha=document.querySelector(".cha");
+	rule.addEventListener("touchstart", function(){		
+		text.style.display="block";
+	},false)
+	cha.addEventListener("touchstart", function(){		
+		text.style.display="none";
+	},false)
+	sub.addEventListener("touchstart", function(){
+		if(num.value.length!=11){alert("请输入正确电话号码"); return;}
+	}, false)
+</script>
+</html>

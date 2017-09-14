@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style>
+    html, body {position: relative;height: 100%;}
+    body {margin: 0;padding: 0;}
+    .swiper-container{width:100%;height: 100%;background:url(img/main/bg.jpg) no-repeat;background-size: 100% 100%;max-width: 800px;max-height: 1269px;}
+    .swiper-container>img:first-child{width: 50%;left: 45%;position:absolute;}
+    .swiper-slide>img{position: absolute;width:90%;top:10%;left:5%;}
+    .swiper-container>img:nth-of-type(2){width: 36%;left: 32%;top:82%;position:absolute;z-index:50;}
+    #load{width: 100%;height: 100%;position: absolute;z-index: 100;background:url(img/loading.jpg) no-repeat;background-size: 100% 100%;}
+    #load>img{width: 60%;margin-left:20%;margin-top:20%;}
+    #load>span{width: 10%;margin-left:45%;margin-top:40%;display: block;font-size: 20px;color:#6bc1f0;}       
+    </style>
+</head>
+<body>
+    <!-- <div id="load">
+            <img src="img/load_font.png" alt="">
+            <span id="pro"></span>
+    </div> -->
+    <div class="swiper-container">
+    	<img src="img/main/index_logo.png" alt="">
+    	<img src="img/choice/s_tab.png" alt="" id="btn">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body01.png" alt="">
+				<img src="img/choice/s_e01.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text01.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water01.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body02.png" alt="">
+				<img src="img/choice/s_e02.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text02.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water02.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body03.png" alt="">
+				<img src="img/choice/s_e03.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text03.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water03.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body04.png" alt="">
+				<img src="img/choice/s_e04.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text04.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water04.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body05.png" alt="">
+				<img src="img/choice/s_e05.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text05.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water05.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body06.png" alt="">
+				<img src="img/choice/s_e06.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text06.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water06.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body07.png" alt="">
+				<img src="img/choice/s_e07.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text07.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water07.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body08.png" alt="">
+				<img src="img/choice/s_e08.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text08.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water08.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body09.png" alt="">
+				<img src="img/choice/s_e09.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text09.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water09.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body10.png" alt="">
+				<img src="img/choice/s_e10.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text10.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water10.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body11.png" alt="">
+				<img src="img/choice/s_e11.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text11.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water11.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s"class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body12.png" alt="">
+				<img src="img/choice/s_e12.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text12.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water12.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body13.png" alt="">
+				<img src="img/choice/s_e13.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text13.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water13.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+            <div class="swiper-slide">
+            	<img src="img/choice/s_body14.png" alt="">
+				<img src="img/choice/s_e14.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
+				<img src="img/choice/s_text14.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.6s">
+				<img src="img/choice/s_water14.png" alt=""class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.9s">
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>    
+</body>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+      onInit: function(swiper){ 
+    swiperAnimateCache(swiper); 
+    swiperAnimate(swiper); 
+  	}, 
+  	onSlideChangeEnd: function(swiper){ 
+    swiperAnimate(swiper); 
+  	} 
+    });
+    var btn=document.querySelector("#btn");
+    btn.addEventListener("touchstart", function(){
+    	var next=window.open('play.html','_self');
+    	var index=swiper.activeIndex;
+    	sessionStorage.setItem('index',index);    			
+	},false)	
+    </script>
+</html>

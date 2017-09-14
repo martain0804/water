@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/animate.css">
+	<title>Document</title>
+	<style type="text/css">
+	  *{padding: 0;margin: 0;}
+	  html,body{width: 100%;height: 100%;}
+	  .wrap{height: 100%;background:url(img/main/bg.jpg) no-repeat;background-size: 100% 100%;max-width: 800px;max-height: 1269;margin: auto;position: relative;}
+	  .wrap>img{position: absolute;}
+	  .wrap>img:first-child{width: 50%;left: 25%;top:2%;}
+	  .wrap>img:nth-of-type(2){width: 70%;left: 13%;top:12%;z-index: 50;animation-duration:0.4s;}
+	  .wrap>img:nth-of-type(3){width: 70%;left: 13%;top:47%;}
+	  .wrap>img:nth-of-type(4){width: 20%;left: 70%;top:18%;z-index: 60;}
+	  .wrap>img:nth-of-type(5){width: 20%;left: 13%;top:22%;z-index: 60;}
+	  .wrap>img:nth-of-type(6){width: 10%;left: 61%;top:44%;animation-iteration-count:infinite;z-index: 100;}
+	  .wrap>img:nth-of-type(7){width: 35%;left: 0%;top:55%;z-index: 100;}
+	  .wrap>span{width: 30%;height:7%;left: 35%;top:70%;position:absolute;display: block;background:url(img/game/time_bg.png) no-repeat;background-size: 100% 100%;text-align: center;font-size:25px;font-weight:bold;line-height: 180%;}
+	  .wrap>img:nth-of-type(8){width: 10%;left: 88%;top:95%;}
+	  .wrap>img:nth-of-type(9){width: 50%;left: 5%;top:15%;}
+	  .wrap>img:nth-of-type(10){width: 20%;left: 12%;top:45%;}
+	  .wrap>img:nth-of-type(11){width: 20%;left: 70%;top:20%;}	  
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<img src="img/main/index_logo.png" alt="">
+		<img src="img/game/peo0_head.png" alt="">
+		<img src="img/game/peo0_body.png" alt="">
+		<img src="img/game/biao01.png" alt="">
+		<img src="img/game/biao02.png" alt="">
+		<!-- 手势 -->
+		<img src="img/game/hand.png" alt="" class="animated fadeIn">
+		<!-- 水 -->
+		<img src="img/game/product.png" alt="">
+		<span>20 " 00</span>
+		<!-- music -->
+		<img src="img/game/music_01.png" alt="">
+		<!-- tip -->
+		<img src="###" alt="" style="z-index:80">
+		<img src="###" alt=""style="z-index:80">
+		<img src="###" alt=""style="z-index:80">
+		<audio src="bg_music.mp3"></audio>
+	</div>
+</body>
+<script type="text/javascript">	
+	var img=document.querySelectorAll("img");
+	var time=document.querySelector("span");
+	var audio=document.querySelector("audio");
+	var qq=0;
+	var timer=null;
+	var bol=false;
+	var mubol=true;
+	audio.play();
+	img[1].src="img/game/peo"+sessionStorage.getItem('index')+"_head.png";
+	img[2].src="img/game/peo"+sessionStorage.getItem('index')+"_body.png";
+	img[5].addEventListener("touchstart", function(){
+		this.style.display="none";
+		bol=true;
+		var clock=2000;
+		timer=setInterval(function(){
+			clock-=5;
+			if(clock==1500){c1();}
+			else if(clock==1000){c2();}
+			else if(clock==500){c3();}
+			var ms=parseInt(clock%100)>=10?parseInt(clock%100):"0"+parseInt(clock%100)
+			time.innerText=parseInt(clock/100)+" ″ "+ms;
+			if(clock==0){
+				clearInterval(timer);
+				bol=false;
+				window.location.href="cal.html";
+				sessionStorage.setItem('cal',qq);
+			}		
+		},50)	
+		img[6].src="img/game/product.gif";
+	}, false)
+	img[1].addEventListener("touchstart", fn, false);
+	function fn(){
+		if(bol==false){return;}
+		qq++;
+		img[1].className="animated shake";
+		tem=setTimeout(function(){img[1].className="";},400)
+	}
+	img[7].addEventListener("touchstart", function(){
+		if(mubol){
+			audio.pause();
+			this.src="img/game/music_02.png";
+		}else{
+			audio.play();
+			this.src="img/game/music_01.png";
+		}
+		mubol=!mubol;
+	}, false)
+	function c1(){		
+		img[3].style.display = 'none';
+		img[4].style.display = 'none';
+		img[8].src = 'img/game/tip1_1.png';
+		img[9].src = 'img/game/tip1_2.png';
+		img[10].src = 'img/game/tip1_3.png';
+	}
+	function c2(){		
+		img[8].src = 'img/game/tip2_1.png';
+		img[9].src = 'img/game/tip2_2.png';
+		img[10].src = 'img/game/tip2_3.png';
+		img[10].style.left="40%";img[10].style.top="39%";
+	}
+	function c3(){	
+		img[8].src = 'img/game/tip3_1.png';
+		img[9].src = 'img/game/tip3_2.png';
+		img[10].src = 'img/game/tip3_3.png';
+		img[10].style.left="63%";img[10].style.top="13%";	
+	}					
+</script>
+</html>
